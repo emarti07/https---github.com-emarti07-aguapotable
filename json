@@ -1,0 +1,35 @@
+using System;
+using System.IO;
+using System.Text.Json;
+
+namespace GuardarJSONAsync
+{
+    class Program
+    {
+        static async Task Main(string[] args)
+        {
+            // Crear un objeto Person
+            var person = new Person
+            {
+                Name = "Juan Pérez",
+                Age = 30,
+                Profession = "Ingeniero",
+                Country = "México"
+            };
+
+            // Serializar el objeto Person en JSON
+            var json = JsonSerializer.Serialize(person);
+
+            // Guardar el JSON en un archivo
+            await File.WriteAllTextAsync("person.json", json);
+        }
+    }
+
+    public class Person
+    {
+        public string Name { get; set; }
+        public int Age { get; set; }
+        public string Profession { get; set; }
+        public string Country { get; set; }
+    }
+}
