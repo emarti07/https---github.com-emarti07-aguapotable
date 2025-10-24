@@ -896,8 +896,8 @@ body.bg-theme15 {
 
 .btn-primary {
 	color: #fff;
-	background-color: #7934f3;
-	border-color: #7934f3
+	background-color: #007bff;
+	border-color: #007bff
 }
 
 .btn-primary:hover {
@@ -955,8 +955,8 @@ body.bg-theme15 {
 
 .btn-success {
 	color: #fff;
-	background-color: #04b962;
-	border-color: #04b962
+	background-color: #28a745;
+	border-color: #28a745
 }
 .btn-success:hover {
 	color: #fff;
@@ -982,8 +982,8 @@ body.bg-theme15 {
 
 .btn-info {
 	color: #fff;
-	background-color: #14b6ff;
-	border-color: #14b6ff
+	background-color: #17a2b8;
+	border-color: #17a2b8
 }
 .btn-info:hover {
 	color: #fff;
@@ -1010,8 +1010,8 @@ body.bg-theme15 {
 
 .btn-warning {
 	color: #fff;
-	background-color: #ff8800;
-	border-color: #ff8800
+	background-color: #fd7e14;
+	border-color: #fd7e14
 }
 .btn-warning:hover {
 	color: #fff;
@@ -1037,8 +1037,8 @@ body.bg-theme15 {
 
 .btn-danger {
 	color: #fff;
-	background-color: #f43643;
-	border-color: #f43643
+	background-color: #dc3545;
+	border-color: #dc3545
 }
 .btn-danger:hover {
 	color: #fff;
@@ -2781,28 +2781,28 @@ table.grid td {
 
 /* Background Colors */
 .bg-primary {
-    background-color: #7934f3!important;
+    background-color: #007bff!important;
 }
 .bg-success {
-    background-color: #04b962!important;
+    background-color: #28a745!important;
 }
 .bg-info {
-    background-color: #14b6ff!important;
+    background-color: #17a2b8!important;
 }
 .bg-secondary {
-    background-color: #94614f!important;
+    background-color: #6c757d!important;
 }
 .bg-danger {
-    background-color: #f43643!important;
+    background-color: #dc3545!important;
 }
 .bg-dark {
-    background-color: #000000!important;
+    background-color: #343a40!important;
 }
 .bg-dark-light {
     background-color: rgba(0,0,0,.25)!important;
 }
 .bg-warning {
-    background-color: #ff8800!important;
+    background-color: #fd7e14!important;
 }
 .bg-light {
     background-color: rgba(255,255,255,.125)!important;
@@ -2947,25 +2947,25 @@ table.grid td {
 }
 /* Text Colors */
 .text-primary {
-    color: #7934f3!important;
+    color: #007bff!important;
 }
 .text-success {
-    color: #04b962!important;
+    color: #28a745!important;
 }
 .text-info {
-    color: #14b6ff!important;
+    color: #17a2b8!important;
 }
 .text-secondary {
-    color: #94614f!important;
+    color: #6c757d!important;
 }
 .text-danger {
-    color: #f43643!important;
+    color: #dc3545!important;
 }
 .text-dark {
-    color: #000000!important;
+    color: #343a40!important;
 }
 .text-warning {
-    color: #ff8800!important;
+    color: #fd7e14!important;
 }
 .text-light {
     color: rgba(255,255,255,.125)!important;

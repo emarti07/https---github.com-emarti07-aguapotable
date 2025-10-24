@@ -1,36 +1,36 @@
 <!-- Sidebar -->
-<div id="sidebar-wrapper" data-simplebar data-simplebar-auto-hide="true" style="background-color: #112D4E;">
+<div id="sidebar-wrapper" data-simplebar data-simplebar-auto-hide="true" style="background-color: #007bff;">
   <div class="brand-logo text-center py-3">
     <a href="index.php" style="text-decoration: none;">
-      <img src="assets/images/logo-icon.png" alt="Logo Aqua Dzonot" width="50" style="filter: drop-shadow(0 0 6px #E16D2B);">
-      <h5 class="logo-text text-white" style="font-family: 'Bahnschrift', sans-serif; font-weight: 600;">Aqua Dzonot</h5>
+      <img src="assets/images/logo-siscatel.png" alt="Logo SISCATEL" width="50" style="filter: drop-shadow(0 0 6px #fd7e14);">
+      <h5 class="logo-text text-white" style="font-family: 'Bahnschrift', sans-serif; font-weight: 600;">SISCATEL</h5>
     </a>
   </div>
 
   <ul class="sidebar-menu do-nicescrol px-2" style="font-family: 'Bahnschrift', sans-serif;">
     <li class="sidebar-header text-white">NAVEGACIÓN PRINCIPAL</li>
 
-    <li><a href="index.php"><i class="zmdi zmdi-view-dashboard text-info"></i> <span class="text-white">Inicio</span></a></li>
-    <li><a href="contribuyentes.php"><i class="zmdi zmdi-face" style="color: #2F7E50;"></i> <span class="text-white">Contribuyentes</span></a></li>
-    <li><a href="cobrar.php"><i class="zmdi zmdi-invert-colors" style="color: #E16D2B;"></i> <span class="text-white">Cobro</span></a></li>
-    <li><a href="pagos.php"><i class="fa fa-usd text-primary"></i> <span class="text-white">Pagados</span></a></li>
-    <li><a href="servicios.php"><i class="zmdi zmdi-accounts-add text-secondary"></i> <span class="text-white">Servicios</span></a></li>
-    <li><a href="usuarios.php"><i class="icon-user text-danger"></i> <span class="text-white">Gestión de Usuarios</span></a></li>
+    <li><a href="index.php"><i class="zmdi zmdi-view-dashboard text-white"></i> <span class="text-white">Inicio</span></a></li>
+    <li><a href="contribuyentes.php"><i class="zmdi zmdi-face" style="color: #28a745;"></i> <span class="text-white">Contribuyentes</span></a></li>
+    <li><a href="cobrar.php"><i class="zmdi zmdi-invert-colors" style="color: #fd7e14;"></i> <span class="text-white">Cobro</span></a></li>
+    <li><a href="pagos.php"><i class="fa fa-usd text-white"></i> <span class="text-white">Pagados</span></a></li>
+    <li><a href="servicios.php"><i class="zmdi zmdi-accounts-add text-white"></i> <span class="text-white">Servicios</span></a></li>
+    <li><a href="usuarios.php"><i class="icon-user" style="color: #dc3545;"></i> <span class="text-white">Gestión de Usuarios</span></a></li>
 
     <li class="sidebar-header text-white mt-3">ETIQUETAS</li>
-    <li><a href="javascript:void();"><i class="zmdi zmdi-coffee" style="color: #E16D2B;"></i> <span class="text-white">Importante</span></a></li>
+    <li><a href="javascript:void();"><i class="zmdi zmdi-coffee" style="color: #fd7e14;"></i> <span class="text-white">Importante</span></a></li>
     <li><a href="javascript:void();"><i class="zmdi zmdi-chart-donut text-warning"></i> <span class="text-white">Alerta</span></a></li>
     <li><a href="javascript:void();"><i class="zmdi zmdi-share text-info"></i> <span class="text-white">Información</span></a></li>
   </ul>
 
   <div class="text-center mt-4 mb-3">
-    <img src="assets/images/aguapotable-400x356 (1).png" alt="Aqua Dzonot" width="180"
+    <img src="assets/images/aguapotable-400x356 (1).png" alt="SISCATEL" width="180"
          style="filter: drop-shadow(0 0 12px #00BDFF); border-radius: 10px;">
   </div>
 </div>
 
 <!-- Topbar -->
-<header class="topbar-nav" style="background-color: #0B2545; font-family: 'Bahnschrift', sans-serif;">
+<header class="topbar-nav" style="background-color: #007bff; font-family: 'Bahnschrift', sans-serif;">
   <nav class="navbar navbar-expand fixed-top">
     <ul class="navbar-nav mr-auto align-items-center">
       <li class="nav-item">

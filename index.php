@@ -49,12 +49,13 @@ if (empty($_SESSION["id"])){
   
   <style>
     :root {
-      --color-azul: #306BA9;
-      --color-naranja: #E16D2B;
-      --color-verde: #4CAF50;
+      --color-azul: #007bff;
+      --color-naranja: #fd7e14;
+      --color-verde: #28a745;
+      --color-rojo: #dc3545;
+      --color-blanco: #ffffff;
       --color-gris-claro: #f8f9fa;
       --color-gris-oscuro: #343a40;
-      --color-blanco: #ffffff;
     }
     
     body {
@@ -305,10 +306,10 @@ if (empty($_SESSION["id"])){
       <!-- Encabezado principal -->
       <div class="main-header">
         <div class="logo-container">
-          <img src="assets/images/logon.png" alt="Logo Alcaldía" class="highlight-lines">
+          <img src="assets/images/logo-siscatel.png" alt="Logo SISCATEL" class="highlight-lines">
         </div>
-        <h2>ALCALDÍA DE TELPANECA</h2>
-        <h1>Sistema de control de cobros de agua potable</h1>
+        <h2>SISCATEL</h2>
+        <h1>Sistema de control de agua potable de Telpaneca</h1>
         <hr class="header-line">
       </div>
 

