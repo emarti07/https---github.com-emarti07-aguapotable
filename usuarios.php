@@ -2,16 +2,13 @@
 session_start();
 include "config.php";
 
-// Solo administradores pueden acceder
 if (!isset($_SESSION["id"])) {
     header("location: login.php");
     exit();
 }
 
-// Mensaje de alerta visual
 $alerta = "";
 
-// CREAR USUARIO
 if (isset($_POST["crear"])) {
     $nombre = $conn->real_escape_string($_POST["nombre"]);
     $apellido = $conn->real_escape_string($_POST["apellido"]);
@@ -30,7 +27,6 @@ if (isset($_POST["crear"])) {
     }
 }
 
-// ACTUALIZAR USUARIO
 if (isset($_POST["actualizar"])) {
     $id = $_POST["id"];
     $nombre = $conn->real_escape_string($_POST["nombre"]);
@@ -50,7 +46,6 @@ if (isset($_POST["actualizar"])) {
     $alerta = "<div class='alert alert-info text-center'>✏️ Usuario actualizado correctamente.</div>";
 }
 
-// ELIMINAR USUARIO
 if (isset($_GET["eliminar"])) {
     $id = $_GET["eliminar"];
     $conn->query("DELETE FROM usuario WHERE id=$id");
@@ -63,34 +58,54 @@ if (isset($_GET["eliminar"])) {
 <html lang="es">
 <head>
   <meta charset="UTF-8">
-  <title>Gestión de Usuarios</title>
-  <link rel="stylesheet" href="assets/css/bootstrap.min.css">
-  <style>
-    @font-face {
-      font-family: 'Bahnschrift';
-      src: local('Bahnschrift'), url('assets/fonts/Bahnschrift.woff2') format('woff2');
-    }
-    body {
-      font-family: 'Bahnschrift', sans-serif;
-      background-color: #f3f7fa;
-    }
-    .container { margin-top: 50px; }
-    .table th { background-color: #306BA9; color: white; text-align: center; }
-    .btn-editar { background-color: #E16D2B; color: white; }
-    .btn-eliminar { background-color: #DC3545; color: white; }
-    .btn-nuevo { background-color: #2F7E50; color: white; }
-    h2 { color: #306BA9; font-weight: 600; }
-    .form-inline input, .form-inline select { margin: 3px; }
-  </style>
+  <title>SISCATEL - Gestión de Usuarios</title>
+  <link href="assets/css/pace.min.css" rel="stylesheet"/>
+  <script src="assets/js/pace.min.js"></script>
+  <link rel="icon" href="assets/images/favicon.ico" type="image/x-icon">
+  <link href="assets/plugins/simplebar/css/simplebar.css" rel="stylesheet"/>
+  <link href="assets/css/bootstrap.min.css" rel="stylesheet"/>
+  <link href="assets/css/animate.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/css/icons.css" rel="stylesheet" type="text/css"/>
+  <link href="assets/css/sidebar-menu.css" rel="stylesheet"/>
+  <link href="assets/css/app-style.css" rel="stylesheet"/>
 </head>
-<body>
+<body class="bg-theme bg-theme1">
 
-<div class="container">
-  <h2 class="text-center mb-4">👥 Gestión de Usuarios</h2>
+<div id="pageloader-overlay" class="visible incoming"><div class="loader-wrapper-outer"><div class="loader-wrapper-inner" ><div class="loader"></div></div></div></div>
 
+<div id="wrapper">
+
+  <div id="sidebar-wrapper" data-simplebar="" data-simplebar-auto-hide="true">
+    <?php include('navegacion.php'); ?>
+  </div>
+
+<header class="topbar-nav">
+ <nav class="navbar navbar-expand fixed-top">
+  <ul class="navbar-nav mr-auto align-items-center">
+    <li class="nav-item">
+      <a class="nav-link toggle-menu" href="javascript:void();">
+       <i class="icon-menu menu-icon"></i>
+     </a>
+    </li>
+    <li class="nav-item">
+      <h4 class="welcome-message">Bienvenido <?php echo $_SESSION["nombre"]." ".$_SESSION["apellido"]; ?></h4>
+    </li>
+  </ul>
+</nav>
+</header>
+
+<div class="clearfix"></div>
+
+<div class="content-wrapper">
+<div class="container-fluid">
+<div class="card">
+<div class="card-body">
+  <div class="card-title">
+    <h2 class="text-uppercase text-center">Gestión de Usuarios</h2>
+  </div>
+  <hr>
   <?php echo $alerta; ?>
 
-  <!-- FORMULARIO CREAR / EDITAR -->
   <?php
   $modo = "crear";
   $nombre = $apellido = $usuario = $rol = "";
@@ -120,12 +135,11 @@ if (isset($_GET["eliminar"])) {
         <option value="operador" <?php if($rol=="operador") echo "selected"; ?>>Operador</option>
         <option value="tecnico" <?php if($rol=="tecnico") echo "selected"; ?>>Técnico</option>
       </select>
-      <button type="submit" name="<?php echo $modo; ?>" class="btn btn-nuevo">
+      <button type="submit" name="<?php echo $modo; ?>" class="btn btn-primary">
         <?php echo ucfirst($modo); ?> Usuario
       </button>
   </form>
 
-  <!-- TABLA DE USUARIOS -->
   <table class="table table-bordered table-hover">
     <thead>
       <tr>
@@ -153,8 +167,8 @@ if (isset($_GET["eliminar"])) {
           <td>{$fila['usuario']}</td>
           <td>$badge</td>
           <td class='text-center'>
-            <a href='usuarios.php?editar={$fila['id']}' class='btn btn-sm btn-editar'>✏️ Editar</a>
-            <a href='usuarios.php?eliminar={$fila['id']}' class='btn btn-sm btn-eliminar' onclick=\"return confirm('¿Eliminar este usuario?')\">🗑️ Eliminar</a>
+            <a href='usuarios.php?editar={$fila['id']}' class='btn btn-sm btn-info'>✏️ Editar</a>
+            <a href='usuarios.php?eliminar={$fila['id']}' class='btn btn-sm btn-danger' onclick=\"return confirm('¿Eliminar este usuario?')\">🗑️ Eliminar</a>
           </td>
         </tr>";
       }
@@ -162,8 +176,16 @@ if (isset($_GET["eliminar"])) {
     </tbody>
   </table>
 </div>
-
+</div>
+</div>
+</div>
+</div>
+</div>
 <script src="assets/js/jquery.min.js"></script>
+<script src="assets/js/popper.min.js"></script>
 <script src="assets/js/bootstrap.min.js"></script>
+<script src="assets/plugins/simplebar/js/simplebar.js"></script>
+<script src="assets/js/sidebar-menu.js"></script>
+<script src="assets/js/app-script.js"></script>
 </body>
 </html>

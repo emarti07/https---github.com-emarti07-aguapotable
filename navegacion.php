@@ -16,6 +16,7 @@
     <li><a href="pagos.php"><i class="fa fa-usd text-white"></i> <span class="text-white">Pagados</span></a></li>
     <li><a href="servicios.php"><i class="zmdi zmdi-accounts-add text-white"></i> <span class="text-white">Servicios</span></a></li>
     <li><a href="usuarios.php"><i class="icon-user" style="color: #dc3545;"></i> <span class="text-white">Gestión de Usuarios</span></a></li>
+    <li><a href="respaldo.php"><i class="fa fa-database text-white"></i> <span class="text-white">Respaldo</span></a></li>
 
     <li class="sidebar-header text-white mt-3">ETIQUETAS</li>
     <li><a href="javascript:void();"><i class="zmdi zmdi-coffee" style="color: #fd7e14;"></i> <span class="text-white">Importante</span></a></li>

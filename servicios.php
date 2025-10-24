@@ -10,12 +10,7 @@ if (empty($_SESSION["id"])){
   <meta charset="utf-8"/>
   <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no"/>
-  <meta name="description" content="Gestión de servicios"/>
-  <meta name="author" content=""/>
-  <title>Servicios</title>
-  
-  <!-- Fuente Bahnschrift -->
-  <link href="https://fonts.googleapis.com/css2?family=Bahnschrift:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <title>SISCATEL - Servicios</title>
   
   <!-- loader-->
   <link href="assets/css/pace.min.css" rel="stylesheet"/>
@@ -45,174 +40,6 @@ if (empty($_SESSION["id"])){
   <!-- Font Awesome -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   
-  <style>
-    :root {
-      --color-azul: #306BA9;
-      --color-naranja: #E16D2B;
-      --color-verde: #4CAF50;
-      --color-gris-claro: #f8f9fa;
-      --color-gris-oscuro: #343a40;
-      --color-blanco: #ffffff;
-    }
-    
-    body {
-      font-family: 'Bahnschrift', Arial, sans-serif;
-      background-color: #f5f7fa;
-    }
-    
-    .navbar-brand, .page-title, .card-title, .modal-title {
-      font-family: 'Bahnschrift', Arial, sans-serif;
-      font-weight: 600;
-    }
-    
-    /* Encabezado mejorado */
-    .page-header-wrapper {
-      background: var(--color-blanco);
-      border-radius: 10px;
-      padding: 25px;
-      margin-bottom: 30px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-      border-left: 5px solid var(--color-azul);
-    }
-    
-    .page-header-content {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-    
-    .page-header-title {
-      position: relative;
-      margin: 0;
-      color: var(--color-azul);
-      font-size: 1.8rem;
-      font-weight: 700;
-      letter-spacing: 0.5px;
-      text-transform: uppercase;
-      padding-bottom: 10px;
-    }
-    
-    .title-text {
-      position: relative;
-      z-index: 2;
-    }
-    
-    .title-underline {
-      position: absolute;
-      bottom: 5px;
-      left: 0;
-      width: 70px;
-      height: 4px;
-      background: var(--color-naranja);
-      border-radius: 2px;
-      z-index: 1;
-    }
-    
-    .btn-add-service {
-      background: var(--color-verde);
-      color: var(--color-blanco);
-      border: none;
-      border-radius: 6px;
-      padding: 12px 25px;
-      font-weight: 600;
-      letter-spacing: 0.5px;
-      transition: all 0.3s ease;
-      box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
-    }
-    
-    .btn-add-service:hover {
-      background: #3d8b40;
-      transform: translateY(-2px);
-      box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
-    }
-    
-    .btn-add-service i {
-      margin-right: 8px;
-    }
-    
-    /* Estilos para la tabla */
-    .card {
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-    }
-    
-    .card-header {
-      background-color: var(--color-blanco);
-      border-bottom: 1px solid rgba(0,0,0,0.05);
-      font-weight: 600;
-      color: var(--color-azul);
-      padding: 15px 25px;
-    }
-    
-    .table {
-      margin-bottom: 0;
-    }
-    
-    .table thead th {
-      background-color: var(--color-azul);
-      color: var(--color-blanco);
-      font-weight: 600;
-      padding: 12px 15px;
-      border: none;
-    }
-    
-    .table tbody td {
-      padding: 12px 15px;
-      vertical-align: middle;
-      border-top: 1px solid rgba(0,0,0,0.03);
-    }
-    
-    .table tbody tr:hover {
-      background-color: rgba(48, 107, 169, 0.03);
-    }
-    
-    .btn-action {
-      padding: 6px 12px;
-      font-size: 0.85rem;
-      border-radius: 4px;
-      margin-right: 5px;
-    }
-    
-    /* Estilos para el modal */
-    .modal-header {
-      background-color: var(--color-azul);
-      color: var(--color-blanco);
-      border-radius: 10px 10px 0 0;
-    }
-    
-    .modal-title {
-      font-weight: 600;
-    }
-    
-    .modal-content {
-      border: none;
-      border-radius: 10px;
-      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
-    }
-    
-    /* Estilos responsive */
-    @media (max-width: 768px) {
-      .page-header-content {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-      
-      .page-header-buttons {
-        margin-top: 15px;
-        width: 100%;
-      }
-      
-      .btn-add-service {
-        width: 100%;
-      }
-      
-      .table-responsive {
-        border: none;
-      }
-    }
-  </style>
 </head>
 
 <body class="bg-theme bg-theme1">
@@ -231,80 +58,41 @@ if (empty($_SESSION["id"])){
   <!--End sidebar-wrapper-->
 
   <!--Start topbar header-->
-  <header class="topbar-nav">
-    <nav class="navbar navbar-expand fixed-top" style="background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
-      <ul class="navbar-nav mr-auto align-items-center">
-        <li class="nav-item">
-          <a class="nav-link toggle-menu" href="javascript:void();">
-            <i class="icon-menu menu-icon" style="color: var(--color-azul);"></i>
-          </a>
-        </li>
-        
-        <h4 class="welcome-message">Bienvenido <?php echo $_SESSION["nombre"]." ".$_SESSION["apellido"]; ?></h4>
-      </ul>
-
-      <ul class="navbar-nav align-items-center right-nav-link">
-        <a class="btn btn-outline-danger" href="controlador/controlador_cerrar_sesion.php">
-          <i class="fa fa-power-off" aria-hidden="true"></i> Salir
-        </a>
-        
-        <li class="nav-item">
-          <a class="nav-link dropdown-toggle dropdown-toggle-nocaret" data-toggle="dropdown" href="#">
-            <span class="user-profile"><img src="https://via.placeholder.com/110x110" class="img-circle" alt="user avatar"></span>
-          </a>
-          <ul class="dropdown-menu dropdown-menu-right">
-            <li class="dropdown-item user-details">
-              <a href="javaScript:void();">
-                <div class="media">
-                  <div class="avatar"><img class="align-self-start mr-3" src="https://via.placeholder.com/110x110" alt="user avatar"></div>
-                  <div class="media-body">
-                    <h6 class="mt-2 user-title"><?php echo $_SESSION["nombre"]." ".$_SESSION["apellido"]; ?></h6>
-                    <p class="user-subtitle"><?php echo $_SESSION["email"]; ?></p>
-                  </div>
-                </div>
-              </a>
-            </li>
-            <li class="dropdown-divider"></li>
-            <li class="dropdown-item"><i class="icon-settings mr-2"></i> Configuración</li>
-            <li class="dropdown-divider"></li>
-            <li class="dropdown-item"><i class="icon-power mr-2"></i> Cerrar sesión</li>
-          </ul>
-        </li>
-      </ul>
-    </nav>
-  </header>
-  <!--End topbar header-->
+<header class="topbar-nav">
+ <nav class="navbar navbar-expand fixed-top">
+  <ul class="navbar-nav mr-auto align-items-center">
+    <li class="nav-item">
+      <a class="nav-link toggle-menu" href="javascript:void();">
+       <i class="icon-menu menu-icon"></i>
+     </a>
+    </li>
+    <li class="nav-item">
+      <h4 class="welcome-message">Bienvenido <?php echo $_SESSION["nombre"]." ".$_SESSION["apellido"]; ?></h4>
+    </li>
+  </ul>
+</nav>
+</header>
+<!--End topbar header-->
   
-  <script src="http://localhost/sweetalert2-11.10.5/sweetalert2.min.js"></script>
-  <link rel="stylesheet" href="http://localhost/sweetalert2-11.10.5/sweetalert2.css">
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
   <div class="clearfix"></div>
 
   <div class="content-wrapper">
     <div class="container-fluid">
-      <!-- Encabezado mejorado -->
-      <div class="row">
-        <div class="col-12">
-          <div class="page-header-wrapper">
-            <div class="page-header-content">
-              <h2 class="page-header-title">
-                <span class="title-text">LISTA DE CATEGORÍAS DE SERVICIOS</span>
-                <span class="title-underline"></span>
-              </h2>
-              <div class="page-header-buttons">
-                <a class="btn btn-add-service" href="./nuevo_servicio.php">
-                  <i class="fas fa-plus-circle"></i> Nuevo servicio
-                </a>
-              </div>
+      <div class="card">
+        <div class="card-body">
+          <div class="card-title">
+            <div class="d-flex justify-content-between align-items-center">
+              <h2 class="text-uppercase">Lista de Categorías de Servicios</h2>
+              <a class="btn btn-success" href="./nuevo_servicio.php">
+                <i class="fas fa-plus-circle"></i> Nuevo servicio
+              </a>
             </div>
           </div>
-        </div>
-      </div>
-      
+          <hr>
       <div class="row">
         <div class="col-lg-12">
-          <div class="card">
-            <div class="card-body">
               <div class="table-responsive">
                 <table class="table table-hover">
                   <thead>
@@ -318,14 +106,11 @@ if (empty($_SESSION["id"])){
                   </thead>
                   <tbody>
                     <?php
-                    // Incluir el archivo de configuración
                     require 'config.php';
 
-                    // Consulta SQL para obtener la lista de servicios
                     $sql = "SELECT `id_tipo_de_servicio`, `nombre`, `descripcion`, `precio` FROM `tipos_de_servicio`";
                     $result = $conn->query($sql);
 
-                    // Verificar si la consulta fue exitosa
                     if ($result->num_rows > 0) {
                       while ($row = $result->fetch_assoc()) {
                         echo '<tr>';
@@ -344,7 +129,6 @@ if (empty($_SESSION["id"])){
                       echo '<tr><td colspan="5" class="text-center py-4">No se encontraron servicios registrados</td></tr>';
                     }
 
-                    // Cerrar la conexión
                     $conn->close();
                     ?>
                   </tbody>
@@ -356,9 +140,6 @@ if (empty($_SESSION["id"])){
       </div>
     </div>
   </div>
-
-  <!-- Bootstrap core JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
 
   <!--start overlay-->
   <div class="overlay toggle-menu"></div>
@@ -454,7 +235,7 @@ if (empty($_SESSION["id"])){
         text: "¿Estás seguro de que deseas guardar los cambios en este servicio?",
         icon: 'question',
         showCancelButton: true,
-        confirmButtonColor: '#306BA9',
+        confirmButtonColor: '#007bff',
         cancelButtonColor: '#6c757d',
         confirmButtonText: 'Sí, guardar',
         cancelButtonText: 'Cancelar'
@@ -476,7 +257,7 @@ if (empty($_SESSION["id"])){
               icon: 'success',
               title: '¡Cambios guardados!',
               text: 'Los cambios en el servicio se han guardado correctamente.',
-              confirmButtonColor: '#306BA9',
+              confirmButtonColor: '#007bff',
             }).then(() => {
               $('#editServiceModal').modal('hide');
               location.reload();
@@ -486,7 +267,7 @@ if (empty($_SESSION["id"])){
               icon: 'error',
               title: 'Error',
               text: 'Ocurrió un error al guardar los cambios.',
-              confirmButtonColor: '#306BA9',
+              confirmButtonColor: '#007bff',
             });
           }
         }
