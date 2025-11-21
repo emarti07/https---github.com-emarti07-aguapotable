@@ -1,45 +1,23 @@
-💧 Proyecto: Sistema de Control de Pagos de Agua Potable
-📝 Descripción General:
-Este proyecto consiste en el desarrollo de un sistema web para la gestión y control de pagos del servicio de agua potable en una comunidad o colonia. El sistema está diseñado para facilitar la administración de usuarios, el registro de pagos mensuales, la emisión de recibos y el seguimiento del historial de pagos de cada usuario.
+# AguaPotable - UI refactor and backup models
 
-El sistema permite a los administradores registrar nuevos usuarios (propietarios o responsables de viviendas), ingresar lecturas de medidores, calcular los montos a pagar según el consumo, generar reportes mensuales y enviar avisos de adeudo.
+Breve: se añaden variables SCSS, layout base, vistas iniciales (dashboard, clientes), modelos básicos (ClientModel, BackupModel) y script para generar respaldos.
 
-🎯 Objetivos del Proyecto:
-Automatizar el registro y control de pagos del servicio de agua potable, eliminando procesos manuales.
+Requisitos:
+- PHP 7.4+ with PDO MySQL
+- MySQL/MariaDB
+- sass (Dart Sass) para compilar SCSS
 
-Facilitar la gestión de usuarios, incluyendo el alta, baja y modificación de datos.
+Instalación y uso:
+1. Configura la conexión en config/database.php o mediante variables de entorno (DB_HOST, DB_NAME, DB_USER, DB_PASS).
+2. Compilar CSS:
+   - Instala sass (https://sass-lang.com/install)
+   - Ejecuta: sass assets/scss/app.scss:assets/css/app.css --style=compressed
+3. Iniciar servidor local (ejemplo): php -S localhost:8000 -t public
+4. Generar respaldo manual:
+   - php scripts/backup.php
+   - Los respaldos se guardan en /backups como JSON y SQL.
 
-Registrar y consultar lecturas de medidores de manera eficiente.
-
-Emitir reportes de pagos y adeudos, tanto individuales como generales.
-
-Permitir la generación de recibos en formato digital o físico.
-
-Asegurar el acceso restringido a usuarios autorizados, protegiendo la información confidencial.
-
-Tener un historial detallado de pagos y consumos por usuario.
-
-🛠️ Tecnologías Utilizadas:
-Frontend:
-
-HTML5
-
-CSS3
-
-JavaScript
-
-Backend:
-
-PHP 7+ (programación del servidor)
-
-MySQL (gestión de base de datos relacional)
-
-SQL para consultas, inserciones, actualizaciones y reportes
-
-Otras herramientas:
-
-XAMPP / Laragon (servidor local para desarrollo y pruebas)
-
-phpMyAdmin (gestión visual de la base de datos)
-
-Git y GitHub (control de versiones y colaboración)
+Próximos pasos sugeridos:
+- Añadir validaciones y formularios CRUD completos para clientes, medidores y facturas.
+- Plantilla de factura en PDF y envío de emails.
+- Tests y CI.

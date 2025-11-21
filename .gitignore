@@ -1,3 +1,6 @@
-vendor/
-node_modules/
-.env
+# Git Ignore
+/vendor/
+/node_modules/
+/.env
+/assets/css/app.css
+/backups/

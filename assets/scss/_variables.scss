@@ -1,0 +1,25 @@
+// Variables SCSS: paleta y espaciado principal
+$primary: #0b6efd;        // azul principal (botones, links)
+$accent:  #00a86b;        // verde secundario (success)
+$danger:  #e03b3b;        // rojo (errores)
+$warning: #ffb020;        // amarillo (alertas)
+$bg:      #f6f8fa;        // fondo general
+$card-bg: #ffffff;        // fondo de tarjetas
+$text:    #1f2937;        // color principal de texto
+$muted:   #6b7280;        // texto secundario
+
+// Tipografía
+$font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+
+// Espaciado
+$spacer-1: 0.25rem;
+$spacer-2: 0.5rem;
+$spacer-3: 1rem;
+$spacer-4: 1.5rem;
+$spacer-5: 3rem;
+
+// Breakpoints
+$breakpoint-sm: 576px;
+$breakpoint-md: 768px;
+$breakpoint-lg: 992px;
+$breakpoint-xl: 1200px;
